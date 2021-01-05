@@ -15,7 +15,7 @@ b.)
       printf("Hello");
 
 Answer:
-      Time complexity= O(nlog3(n))   (log of base 3)
+      Time complexity= O(nlog3(n))  (log of base 3)
 
 
 
