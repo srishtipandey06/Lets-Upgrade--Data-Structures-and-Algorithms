@@ -1,0 +1,31 @@
+LETSUPGRADE- DATA STRUCTURES AND ALGORITHMS- ASSIGNMENT DAY 6
+
+Question 1: Write a function to find the maximum element in the stack
+
+Answer:
+The maximum value may be the top element of the stack, but once a new element is pushed or an element is popped from the stack, the maximum element will be now from the rest of the elements.
+
+1) Create an auxiliary stack, say ‘trackStack’ to keep the track of maximum element
+2) Push the first element to both mainStack and the trackStack.
+3) Now from the second element, push the element to the main stack. Compare the element with the top element of the track stack, if the current element is greater than the top of trackStack then push the current element to trackStack otherwise push the top element of trackStack again into it.
+4) If we pop an element from the main stack, then pop an element from the trackStack as well.
+5) Now to compute the maximum of the main stack at any point, we can simply print the top element of Track stack.
+
+Step by step explanation :
+Suppose the elements are pushed on to the stack in the order {4, 2, 14, 1, 18}
+Step 1 : Push 4, Current max : 4
+Step 2 : Push 2, Current max : 4
+Step 3 : Push 14, Current max : 14
+Step 4 : Push 1, Current max : 14
+Step 5 : Push 18, Current max : 18
+Step 6 : Pop 18, Current max : 14
+
+
+Question 2: Write a function to find the minimum element in the stack
+
+Answer: 
+We can solve this problem of min stack by using two stacks.
+i) Declare two stacks. One is the main stack in which we push value as it is. In the second stack, we only push the minimum element present at that time.
+ii) Whenever we perform push operation in a stack.
+     a) Push the value as it is in a first stack.
+     b) For the second stack, push only the minimum value. For minimum value, Compare the current value with the value present at the top of the stack.
