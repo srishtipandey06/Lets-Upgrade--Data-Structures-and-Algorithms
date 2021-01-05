@@ -1,0 +1,77 @@
+LETSUPGRADE- DATA STRUCTURES AND ALGORITHMS- ASSIGNMENT DAY 2
+
+Question 1: Write the program for deleting an element from the beginning and from any position.
+
+//CODE
+#include <stdio.h>
+int main()
+{
+   int array[100], position, c, n;
+
+   printf("Enter number of elements in array\n");
+   scanf("%d", &n);
+
+   printf("Enter %d elements\n", n);
+
+   for (c = 0; c < n; c++)
+      scanf("%d", &array[c]);
+
+   printf("Enter the location where you wish to delete element\n");
+   scanf("%d", &position);
+
+   if (position >= n+1)
+      printf("Deletion not possible.\n");
+   else
+   {
+      for (c = position - 1; c < n - 1; c++)
+         array[c] = array[c+1];
+
+      printf("Resultant array:\n");
+
+      for (c = 0; c < n - 1; c++)
+         printf("%d\n", array[c]);
+   }
+  return 0;
+}
+
+Question 2: Write the program for printing the array after rotating it k times towards left, where k would be taken as user input.
+
+//CODE
+
+#include<stdio.h> 
+using namespace std; 
+  
+// Function to rightRotate array 
+void RightRotate(int a[], int n, int k) 
+{ 
+      
+    // If rotation is greater  
+    // than size of array 
+    k = k % n; 
+  
+    for(int i = 0; i < n; i++) 
+    { 
+       if(i < k) 
+       { 
+           // Printing rightmost  
+           // kth elements 
+           cout << a[n + i - k] << " "; 
+       } 
+       else
+       { // Prints array after 
+           // 'k' elements 
+           cout << (a[i - k]) << " "; 
+       } 
+    } 
+    cout << "\n"; 
+} 
+      
+// Driver code 
+int main() 
+{ 
+    int Array[] = { 1, 2, 3, 4, 5 }; 
+    int N = sizeof(Array) / sizeof(Array[0]); 
+    int K = 3; 
+    RightRotate(Array, N, K); 
+}
+
